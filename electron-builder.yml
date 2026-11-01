@@ -1,0 +1,35 @@
+appId: cg.hopital.recouvrement
+productName: Recouvrement
+copyright: Usage interne
+directories:
+  output: dist
+  buildResources: build
+files:
+  - out/**/*
+  - package.json
+asarUnpack:
+  - node_modules/better-sqlite3-multiple-ciphers/**
+win:
+  target:
+    - target: nsis
+      arch: [x64]
+  icon: build/icon.ico
+  artifactName: Recouvrement-Installation-${version}.exe
+# Mises à jour en ligne : l'adresse réelle est saisie dans Paramètres → Mises à jour.
+# Publier dist/latest.yml + l'installateur + .blockmap dans ce dossier web.
+publish:
+  - provider: generic
+    url: https://mises-a-jour.invalid/recouvrement
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: always
+  createStartMenuShortcut: true
+  shortcutName: Recouvrement
+  uninstallDisplayName: Recouvrement
+  # Les données (base chiffrée, pièces jointes) sont dans %APPDATA%\Recouvrement
+  # et ne sont PAS effacées à la désinstallation : une réinstallation les retrouve.
+  deleteAppDataOnUninstall: false
+  language: "1036"
+  installerLanguages: [fr_FR]

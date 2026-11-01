@@ -1,0 +1,24 @@
+# Dépendances et fichiers générés
+node_modules/
+out/
+dist/
+*.log
+captures/
+
+# Données réelles : ne JAMAIS les publier (même chiffrées)
+*.db
+*.db-wal
+*.db-shm
+auth.json
+pieces/
+Sauvegarde Recouvrement */
+Rapport mensuel recouvrement *.pdf
+*.eml
+
+# Fichiers d'environnement / éditeur
+.env
+.env.*
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

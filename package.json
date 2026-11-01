@@ -1,0 +1,57 @@
+{
+  "name": "recouvrement",
+  "productName": "Recouvrement",
+  "version": "1.2.1",
+  "description": "Gestion du recouvrement des factures hospitalières",
+  "author": "Recouvrement",
+  "private": true,
+  "main": "./out/main/index.js",
+  "scripts": {
+    "dev": "electron-vite dev",
+    "build": "electron-vite build",
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "test": "vitest run tests/domain",
+    "icon": "node scripts/make-icon.mjs",
+    "postinstall": "electron-builder install-app-deps",
+    "dist": "npm run icon && electron-vite build && electron-builder --win --x64",
+    "test:db": "node scripts/test-db.mjs",
+    "test:e2e": "node tests/e2e/smoke.mjs",
+    "audit:visuel": "node tests/e2e/visual-audit.mjs"
+  },
+  "dependencies": {
+    "better-sqlite3-multiple-ciphers": "12.11.1",
+    "electron-updater": "6.8.11",
+    "exceljs": "4.4.0",
+    "nodemailer": "10.3.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.3.3",
+    "@tanstack/react-query": "5.105.0",
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "24.19.2",
+    "@types/nodemailer": "8.0.2",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "date-fns": "4.4.0",
+    "electron": "42.11.18",
+    "electron-builder": "26.18.0",
+    "electron-vite": "6.0.0",
+    "lucide-react": "1.66.0",
+    "playwright-core": "^1.64.1",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "react-router-dom": "7.18.5",
+    "recharts": "3.10.1",
+    "tailwindcss": "4.3.3",
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "5.0.5",
+    "zod": "4.6.7"
+  },
+  "allowScripts": {
+    "better-sqlite3-multiple-ciphers@12.11.1": true,
+    "electron-winstaller@5.4.0": true,
+    "electron@42.11.18": true
+  }
+}
